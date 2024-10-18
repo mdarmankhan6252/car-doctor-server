@@ -99,8 +99,8 @@ async function run() {
       })
 
       app.get('/checkouts', logger, verifyToken, async (req, res) => {
-         console.log(req.query.email)
-         console.log('token owner : ', req.user);
+         // console.log(req.query.email)
+         // console.log('token owner : ', req.user);
          if(req.user.email !== req.query.email){
             return res.status(403).send({message:'forbidden access'})
          }
@@ -136,7 +136,7 @@ async function run() {
 
 
       await client.db("admin").command({ ping: 1 });
-      console.log("You successfully connected to MongoDB!");
+      // console.log("You successfully connected to MongoDB!");
    } finally {
       //noting..
    }
@@ -152,5 +152,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-   console.log("My server is running...", port);
+   // console.log("My server is running...", port);
 })
