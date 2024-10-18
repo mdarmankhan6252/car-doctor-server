@@ -8,7 +8,7 @@ const cors = require('cors');
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-   origin: ['http://localhost:5173'],
+   origin: ['https://cardoctor-5e0f1.web.app','https://cardoctor-5e0f1.firebaseapp.com'],
    credentials: true
 }))
 app.use(express.json())
