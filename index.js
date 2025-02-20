@@ -8,7 +8,7 @@ const cors = require('cors');
 const port = process.env.PORT || 5000;
 
 app.use(cors({
-   origin: ['https://cardoctor-5e0f1.web.app','https://cardoctor-5e0f1.firebaseapp.com'],
+   origin: ['http://localhost:5173'],
    credentials: true
 }))
 app.use(express.json())
@@ -136,7 +136,7 @@ async function run() {
 
 
       await client.db("admin").command({ ping: 1 });
-      // console.log("You successfully connected to MongoDB!");
+      console.log("You successfully connected to MongoDB!");
    } finally {
       //noting..
    }
@@ -152,5 +152,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-   // console.log("My server is running...", port);
+   console.log("My server is running...", port);
 })
